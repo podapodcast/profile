@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Profile Preview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="./image/celebrity_profile.jpg" alt="Celebrity Image" class="profile-image">
+            <h1 class="profile-name">Kripsy Matt</h1>
+            <p class="profile-bio">Hey fans! I'm offering a free reward of $1,000 to my awesome followers. You can claim it through Bitcoin or CashApp.</p>
+        </div>
+
+        <div class="claim-buttons">
+            <button class="claim-btn" id="bitcoinBtn">Claim via Bitcoin</button>
+            <button class="claim-btn" id="cashappBtn">Claim via CashApp</button>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal" id="claimModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Contact Celebrity Management</h2>
+            <p>To claim your reward, please verify by contacting celebrity management and paying a processing fee of $10.</p>
+            <p>Payment can be made through Bitcoin or CashApp. Once verified, you will receive the full reward amount.</p>
+            <button class="modal-btn">Contact Management</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle popup modal
+        const bitcoinBtn = document.getElementById('bitcoinBtn');
+        const cashappBtn = document.getElementById('cashappBtn');
+        const claimModal = document.getElementById('claimModal');
+        const closeModal = document.getElementById('closeModal');
+
+        bitcoinBtn.addEventListener('click', () => {
+            claimModal.style.display = 'block';
+        });
+
+        cashappBtn.addEventListener('click', () => {
+            claimModal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            claimModal.style.display = 'none';
+        });
+
+        window.onclick = (event) => {
+            if (event.target == claimModal) {
+                claimModal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
